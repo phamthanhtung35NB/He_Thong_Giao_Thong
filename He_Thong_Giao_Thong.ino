@@ -105,7 +105,7 @@ void buttonDuongNgan(){
   digitalWrite( ledXanh2, HIGH); 
   digitalWrite( ledVang2, LOW); 
   digitalWrite( ledDo2,LOW); 
-  delay(timeXanh2);
+  delay(timeXanh2+timecong);
   //vang2 on
   digitalWrite( ledXanh1, LOW); 
   digitalWrite( ledVang1,LOW); 
