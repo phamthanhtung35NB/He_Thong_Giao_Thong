@@ -54,7 +54,7 @@ void butonDo(){
   digitalWrite( ledXanh2, LOW); 
   digitalWrite( ledVang2, LOW); 
   digitalWrite( ledDo2, HIGH);
-  delay(timeXanh1);
+  delay(timeXanh1+timecong);
   //vang1 on                       
   digitalWrite( ledXanh1, LOW); 
   digitalWrite( ledVang1,HIGH); 
@@ -115,11 +115,11 @@ void butonden(){
   delay(timeVang2);
 }
 void loop() {
-  if (digitalRead(nutDo==1))
+  if (digitalRead(nutDo)==1&&digitalRead(nutDen)==0;)
   {
     butonDo();
   }
-  else if (digitalRead(nutDen==1))
+  else if (digitalRead(nutDen)==1&&digitalRead(nutDo)==0;)
   {
     butonden();  
   }
