@@ -1,7 +1,7 @@
 //------------------------------------------------//
 //thoi gian mac dinh                              //
 const int timeXanh1=10000;   //1s=1000mls         //
-const int timeXanh2=10000;  //10000mls=10s        //
+const int timeXanh2=10000;  //10000mls=10s        // chi sua o day
                                                   //
 //thoi gian cong                                  //
 const int timecong=10000;                         //
