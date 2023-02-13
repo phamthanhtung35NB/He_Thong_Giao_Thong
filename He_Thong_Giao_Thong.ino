@@ -12,154 +12,190 @@ const int timeVang=3000;
 int timeDo1=timeXanh2+3000;
 int timeDo2=timeXanh1+3000;
 //chan den led
-#define ledXanh1 9
-#define ledVang1 8
-#define ledDo1 7
+#define ledXanhDai 9
+#define ledVangDai 8
+#define ledDoDai 7
 
-#define ledXanh2 12
-#define ledVang2 11
-#define ledDo2 10
+#define ledXanhNgan 12
+#define ledVangNgan 11
+#define ledDoNgan 10
 //nut den led
-#define nutDuongDai 6
-#define nutDuongNgan 5
+#define nutThemTimeDuongDai 6
+#define nutThemTimeDuongNgan 5
+
+#define batDoDuongDai 4
+#define batDoDuongNgan 3
 //bao error
 #define error 13
 void setup() {
   Serial.begin(9600);
 
   //nut
-  pinMode(nutDuongDai,INPUT);
-  pinMode(nutDuongNgan,INPUT);
+  pinMode(nutThemTimeDuongDai,INPUT);
+  pinMode(nutThemTimeDuongNgan,INPUT);
   //led
-  pinMode(ledXanh1, OUTPUT);
-  pinMode(ledVang1, OUTPUT);
-  pinMode(ledDo1, OUTPUT);
-  pinMode(ledXanh2, OUTPUT);
-  pinMode(ledVang2, OUTPUT);
-  pinMode(ledDo2, OUTPUT);
+  pinMode(ledXanhDai, OUTPUT);
+  pinMode(ledVangDai, OUTPUT);
+  pinMode(ledDoDai, OUTPUT);
+  pinMode(ledXanhNgan, OUTPUT);
+  pinMode(ledVangNgan, OUTPUT);
+  pinMode(ledDoNgan, OUTPUT);
   //off all
-  digitalWrite(ledXanh1,0);
-  digitalWrite(ledVang1,0);
-  digitalWrite(ledDo1,0);
-  digitalWrite(ledXanh2,0);
-  digitalWrite(ledVang2,0);
-  digitalWrite(ledDo2,0);
+  digitalWrite(ledXanhDai,0);
+  digitalWrite(ledVangDai,0);
+  digitalWrite(ledDoDai,0);
+  digitalWrite(ledXanhNgan,0);
+  digitalWrite(ledVangNgan,0);
+  digitalWrite(ledDoNgan,0);
   //error
   digitalWrite(error, 0);
 }
 void buttonDuongDai(){
   //xanh1 on
-  digitalWrite( ledXanh1, HIGH); 
-  digitalWrite( ledVang1,LOW); 
-  digitalWrite( ledDo1, LOW); 
-  digitalWrite( ledXanh2, LOW); 
-  digitalWrite( ledVang2, LOW); 
-  digitalWrite( ledDo2, HIGH);
+  digitalWrite( ledXanhDai, HIGH); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, LOW); 
+  digitalWrite( ledXanhNgan, LOW); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan, HIGH);
   delay(timeXanh1+timecong);
   //vang1 on                       
-  digitalWrite( ledXanh1, LOW); 
-  digitalWrite( ledVang1,HIGH); 
-  digitalWrite( ledDo1, LOW); 
-  digitalWrite( ledXanh2, LOW); 
-  digitalWrite( ledVang2, LOW); 
-  digitalWrite( ledDo2, HIGH);
+  digitalWrite( ledXanhDai, LOW); 
+  digitalWrite( ledVangDai,HIGH); 
+  digitalWrite( ledDoDai, LOW); 
+  digitalWrite( ledXanhNgan, LOW); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan, HIGH);
   delay(timeVang);
   //xanh2 on                       
-  digitalWrite( ledXanh1, LOW); 
-  digitalWrite( ledVang1,LOW); 
-  digitalWrite( ledDo1, HIGH); 
-  digitalWrite( ledXanh2, HIGH); 
-  digitalWrite( ledVang2, LOW); 
-  digitalWrite( ledDo2,LOW); 
+  digitalWrite( ledXanhDai, LOW); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, HIGH); 
+  digitalWrite( ledXanhNgan, HIGH); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan,LOW); 
   delay(timeXanh2);
   //vang2 on
-  digitalWrite( ledXanh1, LOW); 
-  digitalWrite( ledVang1,LOW); 
-  digitalWrite( ledDo1, HIGH); 
-  digitalWrite( ledXanh2, LOW); 
-  digitalWrite( ledVang2, HIGH); 
-  digitalWrite( ledDo2, LOW);
+  digitalWrite( ledXanhDai, LOW); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, HIGH); 
+  digitalWrite( ledXanhNgan, LOW); 
+  digitalWrite( ledVangNgan, HIGH); 
+  digitalWrite( ledDoNgan, LOW);
   delay(timeVang);
 }
 void buttonDuongNgan(){
   //xanh1 on
-  digitalWrite( ledXanh1, HIGH); 
-  digitalWrite( ledVang1,LOW); 
-  digitalWrite( ledDo1, LOW); 
-  digitalWrite( ledXanh2, LOW); 
-  digitalWrite( ledVang2, LOW); 
-  digitalWrite( ledDo2, HIGH);
+  digitalWrite( ledXanhDai, HIGH); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, LOW); 
+  digitalWrite( ledXanhNgan, LOW); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan, HIGH);
   delay(timeXanh1);
   //vang1 on                       
-  digitalWrite( ledXanh1, LOW); 
-  digitalWrite( ledVang1,HIGH); 
-  digitalWrite( ledDo1, LOW); 
-  digitalWrite( ledXanh2, LOW); 
-  digitalWrite( ledVang2, LOW); 
-  digitalWrite( ledDo2, HIGH);
+  digitalWrite( ledXanhDai, LOW); 
+  digitalWrite( ledVangDai,HIGH); 
+  digitalWrite( ledDoDai, LOW); 
+  digitalWrite( ledXanhNgan, LOW); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan, HIGH);
   delay(timeVang);
   //xanh2 on                       
-  digitalWrite( ledXanh1, LOW); 
-  digitalWrite( ledVang1,LOW); 
-  digitalWrite( ledDo1, HIGH); 
-  digitalWrite( ledXanh2, HIGH); 
-  digitalWrite( ledVang2, LOW); 
-  digitalWrite( ledDo2,LOW); 
+  digitalWrite( ledXanhDai, LOW); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, HIGH); 
+  digitalWrite( ledXanhNgan, HIGH); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan,LOW); 
   delay(timeXanh2+timecong);
   //vang2 on
-  digitalWrite( ledXanh1, LOW); 
-  digitalWrite( ledVang1,LOW); 
-  digitalWrite( ledDo1, HIGH); 
-  digitalWrite( ledXanh2, LOW); 
-  digitalWrite( ledVang2, HIGH); 
-  digitalWrite( ledDo2, LOW);
+  digitalWrite( ledXanhDai, LOW); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, HIGH); 
+  digitalWrite( ledXanhNgan, LOW); 
+  digitalWrite( ledVangNgan, HIGH); 
+  digitalWrite( ledDoNgan, LOW);
   delay(timeVang);
 }
-void loop() {
-  if (digitalRead(nutDuongDai)==1&&digitalRead(nutDuongNgan)==0)
-  {
-    buttonDuongDai();
-  }
-  else if (digitalRead(nutDuongNgan)==1&&digitalRead(nutDuongDai)==0)
-  {
-    buttonDuongNgan();  
-  }
-  else{  
-  //xanh1 on
+ void binhthuong(){
+  //xanh dai on-đỏ ngắn on
   Serial.println("xanh1");
-  digitalWrite( ledXanh1, HIGH); 
-  digitalWrite( ledVang1,LOW); 
-  digitalWrite( ledDo1, LOW); 
-  digitalWrite( ledXanh2, LOW); 
-  digitalWrite( ledVang2, LOW); 
-  digitalWrite( ledDo2, HIGH);
+  digitalWrite( ledXanhDai, HIGH); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, LOW); 
+  digitalWrite( ledXanhNgan, LOW); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan, HIGH);
   delay(timeXanh1);
-  //vang1 on    
+  //vang dài on- dỏ ngắn on    
   Serial.println("vang1");                   
-  digitalWrite( ledXanh1, LOW); 
-  digitalWrite( ledVang1,HIGH); 
-  digitalWrite( ledDo1, LOW); 
-  digitalWrite( ledXanh2, LOW); 
-  digitalWrite( ledVang2, LOW); 
-  digitalWrite( ledDo2, HIGH);
+  digitalWrite( ledXanhDai, LOW); 
+  digitalWrite( ledVangDai,HIGH); 
+  digitalWrite( ledDoDai, LOW); 
+  digitalWrite( ledXanhNgan, LOW); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan, HIGH);
   delay(timeVang);
   //xanh2 on      
   Serial.println("xanh2");                 
-  digitalWrite( ledXanh1, LOW); 
-  digitalWrite( ledVang1,LOW); 
-  digitalWrite( ledDo1, HIGH); 
-  digitalWrite( ledXanh2, HIGH); 
-  digitalWrite( ledVang2, LOW); 
-  digitalWrite( ledDo2,LOW); 
+  digitalWrite( ledXanhDai, LOW); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, HIGH); 
+  digitalWrite( ledXanhNgan, HIGH); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan,LOW); 
   delay(timeXanh2);
   //vang2 on
   Serial.println("vang 2");
-  digitalWrite( ledXanh1, LOW); 
-  digitalWrite( ledVang1,LOW); 
-  digitalWrite( ledDo1, HIGH); 
-  digitalWrite( ledXanh2, LOW); 
-  digitalWrite( ledVang2, HIGH); 
-  digitalWrite( ledDo2, LOW);
-  delay(timeVang);                        
+  digitalWrite( ledXanhDai, LOW); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, HIGH); 
+  digitalWrite( ledXanhNgan, LOW); 
+  digitalWrite( ledVangNgan, HIGH); 
+  digitalWrite( ledDoNgan, LOW);
+  delay(timeVang);
+ }
+void buttonbatDoDuongDai(){
+  Serial.println("den do duong dai");
+  digitalWrite( ledXanhDai, LOW); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, 1); 
+  digitalWrite( ledXanhNgan, 1); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan, 0);
+}
+void buttonbatDoDuongNgan(){
+  Serial.println("den do duong ngan");
+  digitalWrite( ledXanhDai, HIGH); 
+  digitalWrite( ledVangDai,LOW); 
+  digitalWrite( ledDoDai, LOW); 
+  digitalWrite( ledXanhNgan, LOW); 
+  digitalWrite( ledVangNgan, LOW); 
+  digitalWrite( ledDoNgan, HIGH);
+}
+void loop() {
+  // tăng tg đường dài
+  if (digitalRead(nutThemTimeDuongDai)==1&&digitalRead(nutThemTimeDuongNgan)==0&&digitalRead(batDoDuongDai)==0&&digitalRead(batDoDuongNgan)==0)
+  {
+    buttonDuongDai();
+  }
+  // tăng tg ggường ngắn
+  else if (digitalRead(nutThemTimeDuongNgan)==1&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(batDoDuongDai)==0&&digitalRead(batDoDuongNgan)==0)
+  {
+    buttonDuongNgan();  
+  }
+  // bật đèn đỏ đường dài
+  else if (digitalRead(batDoDuongDai)==1&&digitalRead(batDoDuongNgan)==0&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(nutThemTimeDuongNgan)==0)
+  {
+    buttonbatDoDuongDai();
+  }
+  // bật đèn đỏ đường ngắn
+  else if (digitalRead(batDoDuongNgan)==1&&digitalRead(batDoDuongDai)==0&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(nutThemTimeDuongNgan)==0)
+  {
+    buttonbatDoDuongNgan;
+  }
+  else if (digitalRead(batDoDuongNgan)==1&&digitalRead(batDoDuongDai)==0&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(nutThemTimeDuongNgan)==0){  
+    binhthuong();                  
   }
 }
