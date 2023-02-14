@@ -195,7 +195,8 @@ void loop() {
   {
     buttonbatDoDuongNgan;
   }
-  else if (digitalRead(batDoDuongNgan)==1&&digitalRead(batDoDuongDai)==0&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(nutThemTimeDuongNgan)==0){  
+  //binh thường
+  else if (digitalRead(batDoDuongNgan)==0&&digitalRead(batDoDuongDai)==0&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(nutThemTimeDuongNgan)==0){  
     binhthuong();                  
   }
 }
