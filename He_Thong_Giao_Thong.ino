@@ -41,6 +41,7 @@ void setup() {
   pinMode(ledXanhNgan, OUTPUT);
   pinMode(ledVangNgan, OUTPUT);
   pinMode(ledDoNgan, OUTPUT);
+  pinMode(error, OUTPUT);
   //off all
   digitalWrite(ledXanhDai,0);
   digitalWrite(ledVangDai,0);
@@ -179,25 +180,40 @@ void loop() {
   // tăng tg đường dài
   if (digitalRead(nutThemTimeDuongDai)==1&&digitalRead(nutThemTimeDuongNgan)==0&&digitalRead(batDoDuongDai)==0&&digitalRead(batDoDuongNgan)==0)
   {
+    digitalWrite(error,0);
     buttonDuongDai();
+    
   }
   // tăng tg ggường ngắn
   else if (digitalRead(nutThemTimeDuongNgan)==1&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(batDoDuongDai)==0&&digitalRead(batDoDuongNgan)==0)
   {
-    buttonDuongNgan();  
+    digitalWrite(error,0);
+    buttonDuongNgan();
+      
   }
   // bật đèn đỏ đường dài
   else if (digitalRead(batDoDuongDai)==1&&digitalRead(batDoDuongNgan)==0&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(nutThemTimeDuongNgan)==0)
   {
+    digitalWrite(error,0);
     buttonbatDoDuongDai();
+    
   }
   // bật đèn đỏ đường ngắn
   else if (digitalRead(batDoDuongNgan)==1&&digitalRead(batDoDuongDai)==0&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(nutThemTimeDuongNgan)==0)
   {
+    digitalWrite(error,0);
     buttonbatDoDuongNgan;
+    
   }
   //binh thường
-  else if (digitalRead(batDoDuongNgan)==0&&digitalRead(batDoDuongDai)==0&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(nutThemTimeDuongNgan)==0){  
-    binhthuong();                  
+  else if (digitalRead(batDoDuongNgan)==0&&digitalRead(batDoDuongDai)==0&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(nutThemTimeDuongNgan)==0)
+  {  
+    digitalWrite(error,0);
+    binhthuong();
+                      
   }
+  else
+  {
+    digitalWrite(error, 1);
+  } 
 }
