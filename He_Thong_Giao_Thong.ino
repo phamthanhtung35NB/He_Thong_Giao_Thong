@@ -1,3 +1,4 @@
+//tên dự án "HỆ THỐNG ĐÈN GIAO THÔNG "
 //------------------------------------------------//
 //thoi gian mac dinh                              //
 const int timeXanh1=10000;   //1s=1000mls         //
@@ -137,7 +138,7 @@ void buttonDuongNgan(){
   digitalWrite( ledVangNgan, LOW); 
   digitalWrite( ledDoNgan, HIGH);
   delay(timeVang);
-  //xanh2 on      
+  //xanh ngan on - do dai on  
   Serial.println("xanh2");                 
   digitalWrite( ledXanhDai, LOW); 
   digitalWrite( ledVangDai,LOW); 
@@ -146,7 +147,7 @@ void buttonDuongNgan(){
   digitalWrite( ledVangNgan, LOW); 
   digitalWrite( ledDoNgan,LOW); 
   delay(timeXanh2);
-  //vang2 on
+  //vang ngan on-do dai on
   Serial.println("vang 2");
   digitalWrite( ledXanhDai, LOW); 
   digitalWrite( ledVangDai,LOW); 
