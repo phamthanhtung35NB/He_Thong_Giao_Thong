@@ -204,7 +204,7 @@ void loop() {
   else if (digitalRead(batDoDuongNgan)==1&&digitalRead(batDoDuongDai)==0&&digitalRead(nutThemTimeDuongDai)==0&&digitalRead(nutThemTimeDuongNgan)==0)
   {
     digitalWrite(error,0);
-    buttonbatDoDuongNgan;
+    buttonbatDoDuongNgan();
     
   }
   //binh thường
